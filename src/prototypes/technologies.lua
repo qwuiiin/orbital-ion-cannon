@@ -17,7 +17,6 @@ data:extend({
         prerequisites = { "rocket-silo", "laser-weapons-damage-6" },
         effects = {
             { type = "unlock-recipe", recipe = "orbital-ion-cannon" },
-            { type = "unlock-recipe", recipe = "ion-cannon-targeter" },
         },
         unit = { count = 2500, ingredients = science, time = 60 },
         order = "k-a",

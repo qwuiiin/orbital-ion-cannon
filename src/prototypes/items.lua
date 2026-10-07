@@ -11,14 +11,16 @@ data:extend({
         send_to_orbit_mode = "manual",
     },
     -- A selection tool selecting nothing: click or drag anywhere, also in map and
-    -- remote view, and the centre of the selection is the target.
+    -- remote view, and the centre of the selection is the target. Like the artillery
+    -- remote it only lives in the cursor and comes from a shortcut.
     {
         type = "selection-tool",
         name = "ion-cannon-targeter",
         icon = "__OrbitalIonCannon-SE__/graphics/crosshairs64.png",
         icon_size = 64,
-        flags = { "not-stackable" },
-        subgroup = "capsule",
+        flags = { "only-in-cursor", "not-stackable", "spawnable" },
+        auto_recycle = false,
+        subgroup = "spawnables",
         order = "z[ion-cannon-targeter]",
         stack_size = 1,
         select = {

@@ -8,7 +8,7 @@ Rewritten from scratch for 2.0 on top of [Supercheese's Orbital Ion Cannon](http
 
 - Research **Orbital ion cannon**, craft one and send it to orbit from a rocket silo. Each cannon starts on cooldown.
 - Cannons orbit the **planet they were launched from** and only fire there. A Space Exploration orbit counts as its planet or moon; a Space Age platform counts as the planet it is parked at, but cannot be targeted itself.
-- Use the **targeting device** on the map, in remote view or on the ground, within its range of you (100 tiles by default). The target is marked, a klaxon sounds and the blast lands after the heat-up (≈7 s by default).
+- Take the **targeting device** from the shortcut bar (unlocked with the research) and click a target on the map, in remote view or on the ground, within its range of you (100 tiles by default). The target is marked, a klaxon sounds and the blast lands after the heat-up (≈7 s by default).
 - Build a powered **orbital uplink** (research) and targeting devices reach the whole planet it stands on, orbit included. It also works as a radar.
 - **Auto-targeting** (research) lets radars designate enemy nests while they scan and hits new nests in always-visible radar coverage. A configurable number of cannons per planet stays reserved for manual use.
 - The **ion cannon window** (top button or `I`) lists cannons per planet with their cooldowns. Admins can switch auto-targeting off, block players from firing, and — with the cheat setting on — add or remove cannons.
