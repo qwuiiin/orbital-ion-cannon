@@ -1,6 +1,6 @@
 -- Overhauls (Space Exploration, Krastorio 2, ...) rename or remove science packs and
 -- technologies; keep only what exists so the tech tree never fails to load.
-for _, name in pairs({ "orbital-ion-cannon", "auto-targeting" }) do
+for _, name in pairs({ "orbital-ion-cannon", "auto-targeting", "ion-cannon-uplink" }) do
     local tech = data.raw.technology[name]
     if tech then
         local prerequisites = {}

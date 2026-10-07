@@ -36,6 +36,7 @@ data:extend({
     int("ion-cannon-min-cannons-ready", "runtime-global", "f", 2, 0),
     int("ion-cannon-chart-tag-duration", "runtime-global", "g", 720, 120),
     bool("ion-cannon-cheat-menu", "runtime-global", "h", false),
+    int("ion-cannon-targeter-range", "runtime-global", "i", 100, 10),
 
     -- Per player
     bool("ion-cannon-play-voices", "runtime-per-user", "a", true),

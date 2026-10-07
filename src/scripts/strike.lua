@@ -1,6 +1,7 @@
 local Audio = require("scripts.audio")
 local Cannons = require("scripts.cannons")
 local Locations = require("scripts.locations")
+local Uplink = require("scripts.uplink")
 
 -- A designated target waits for the cannon to heat up (~3.5 s per multiplier step),
 -- then the strike projectile hits it.
@@ -166,13 +167,31 @@ function Strike.expire_chart_tags()
     end
 end
 
---- The targeting device is an artillery-remote capsule, so it works from map and remote view.
+local function within_reach(player, surface, position)
+    if player.physical_surface ~= surface then
+        return false
+    end
+    local range = settings.global["ion-cannon-targeter-range"].value
+    local dx = position.x - player.physical_position.x
+    local dy = position.y - player.physical_position.y
+    return dx * dx + dy * dy <= range * range
+end
+
+--- The targeting device is an artillery-remote capsule, so it works from map and remote
+--- view, but it only reaches the device's range unless an uplink covers the planet.
 function Strike.on_player_used_capsule(event)
     if event.item.name ~= "ion-cannon-targeter" then
         return
     end
     local player = game.get_player(event.player_index)
-    Strike.target(player.force, player.surface, event.position, player)
+    local surface = player.surface
+    local location = Locations.of(surface)
+    if location and not player.cheat_mode and not within_reach(player, surface, event.position)
+        and not Uplink.covers(player.force, location.key) then
+        refuse(player, { "ion-cannon.out-of-range", settings.global["ion-cannon-targeter-range"].value })
+        return
+    end
+    Strike.target(player.force, surface, event.position, player)
 end
 
 --- "Select target" when the device is picked up while a cannon is ready.
