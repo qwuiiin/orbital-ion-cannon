@@ -4,7 +4,7 @@ Date: 2026-10-06
   Major Features:
     - Rewritten from scratch for Factorio 2.0 on top of Supercheese's Orbital Ion Cannon 1.8.2 (MIT). The mod is now MIT licensed.
     - Cannons orbit the planet they were launched from and fire only there (Space Exploration planets and moons, Space Age planets).
-    - The targeting device works like an artillery remote: from the map, remote view or the ground, within a configurable range of the player.
+    - The targeting device is a selection tool: click or drag on the ground, the map or remote view, within a configurable range of the player.
     - Orbital uplink: a powered building that lets targeting devices reach its whole planet.
   Changes:
     - No library dependencies.

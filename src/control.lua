@@ -57,8 +57,8 @@ script.on_event(defines.events.on_cargo_pod_finished_ascending, function(event)
     end
 end)
 
-script.on_event(defines.events.on_player_used_capsule, function(event)
-    Strike.on_player_used_capsule(event)
+script.on_event({ defines.events.on_player_selected_area, defines.events.on_player_alt_selected_area }, function(event)
+    Strike.on_player_selected_area(event)
     watch_strikes()
 end)
 

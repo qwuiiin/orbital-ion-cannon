@@ -88,18 +88,6 @@ data:extend({
     blast,
     scorchmark,
     {
-        type = "artillery-flare",
-        name = "ion-cannon-flare",
-        icon = "__OrbitalIonCannon-SE__/graphics/crosshairs64.png",
-        icon_size = 64,
-        flags = { "placeable-off-grid", "not-on-map" },
-        hidden = true,
-        map_color = { 1, 0.1, 0.1 },
-        life_time = 2,
-        shots_per_flare = 0, -- never attract artillery
-        pictures = { empty },
-    },
-    {
         type = "simple-entity",
         name = "ion-cannon-target",
         icon = "__OrbitalIonCannon-SE__/graphics/crosshairs64.png",

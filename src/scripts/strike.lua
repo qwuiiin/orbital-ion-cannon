@@ -177,21 +177,31 @@ local function within_reach(player, surface, position)
     return dx * dx + dy * dy <= range * range
 end
 
---- The targeting device is an artillery-remote capsule, so it works from map and remote
---- view, but it only reaches the device's range unless an uplink covers the planet.
-function Strike.on_player_used_capsule(event)
-    if event.item.name ~= "ion-cannon-targeter" then
+local function center(area)
+    local left_top = area.left_top or area[1]
+    local right_bottom = area.right_bottom or area[2]
+    return {
+        x = ((left_top.x or left_top[1]) + (right_bottom.x or right_bottom[1])) / 2,
+        y = ((left_top.y or left_top[2]) + (right_bottom.y or right_bottom[2])) / 2,
+    }
+end
+
+--- The targeting device is a selection tool, so it works from map and remote view,
+--- but it only reaches the device's range unless an uplink covers the planet.
+function Strike.on_player_selected_area(event)
+    if event.item ~= "ion-cannon-targeter" then
         return
     end
     local player = game.get_player(event.player_index)
-    local surface = player.surface
+    local surface = event.surface
+    local position = center(event.area)
     local location = Locations.of(surface)
-    if location and not player.cheat_mode and not within_reach(player, surface, event.position)
+    if location and not player.cheat_mode and not within_reach(player, surface, position)
         and not Uplink.covers(player.force, location.key) then
         refuse(player, { "ion-cannon.out-of-range", settings.global["ion-cannon-targeter-range"].value })
         return
     end
-    Strike.target(player.force, surface, event.position, player)
+    Strike.target(player.force, surface, position, player)
 end
 
 --- "Select target" when the device is picked up while a cannon is ready.
