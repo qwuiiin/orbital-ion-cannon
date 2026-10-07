@@ -4,7 +4,7 @@
 	"factorio_version": "2.0",
 	"title": "Orbital Ion Cannon (Space Exploration Edition)",
 	"author": "qwuiiin",
-	"homepage": "https://github.com/qwuiiin/OrbitalIonCannon-SE",
+	"homepage": "https://github.com/qwuiiin/orbital-ion-cannon",
 	"dependencies": [
 		"base >= 2.0",
 		"? space-exploration >= 0.7.0",
