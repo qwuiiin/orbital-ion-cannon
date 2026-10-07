@@ -1,17 +1,16 @@
 {
-	"name": "Orbital Ion Cannon",
-	"version": "1.8.2",
-	"factorio_version": "0.18",
-	"title": "Orbital Ion Cannon",
-	"author": "Supercheese",
-	"homepage": "http://www.factorioforums.com/forum/viewtopic.php?f=93&t=17910",
+	"name": "OrbitalIonCannon-SE",
+	"version": "4.0.0",
+	"factorio_version": "2.0",
+	"title": "Orbital Ion Cannon (Space Exploration Edition)",
+	"author": "qwuiiin",
+	"homepage": "https://github.com/qwuiiin/OrbitalIonCannon-SE",
 	"dependencies": [
-		"base >= 0.18",
-		"stdlib >= 1.4.0",
-		"? bobwarfare >= 0.18.0",
-		"? bobpower >= 0.18.0",
-		"? bobtech >= 0.18.0",
-		"? bobelectronics >= 0.18.0"
+		"base >= 2.0",
+		"? space-exploration >= 0.7.0",
+		"? space-age",
+		"! Orbital Ion Cannon",
+		"! Kux-OrbitalIonCannon"
 	],
-	"description": "When you need to call down the thunder to deal with those pesky biters, launch a rocket with an ion cannon into orbit and show the bugs who's boss."
+	"description": "Launch orbital ion cannons with your rocket silo and call down the thunder on enemy nests. Cannons stay in orbit of the planet they were launched from, so every planet or moon builds its own arsenal. Works with Space Exploration zones and Space Age planets.\nBased on Supercheese's original Orbital Ion Cannon (MIT)."
 }
